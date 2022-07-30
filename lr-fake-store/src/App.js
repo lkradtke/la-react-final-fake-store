@@ -1,11 +1,24 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductPage from './ProductPage';
+import ProductDetails from './ProductDetails';
+import Cart from './Cart';
+import CheckoutPage from './CheckoutPage';
+import Header from './Header';
 
 function App() {
   return (
-    <div className="App">
-      <ProductPage />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/products" element={<ProductPage />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

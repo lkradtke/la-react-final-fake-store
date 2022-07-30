@@ -2,6 +2,7 @@ import React, { useDebugValue } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import './productPage.module.css';
+import { Link } from 'react-router-dom';
 
 const ProductPage = () => {
     const [products, setProducts] = useState([]);
@@ -35,4 +36,4 @@ const ProductPage = () => {
     )
 };
 
-export default ProductPage
+export default ProductPage;
