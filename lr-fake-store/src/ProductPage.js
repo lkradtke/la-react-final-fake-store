@@ -27,7 +27,7 @@ const ProductPage = () => {
                             <img src={product.image} alt={product.title}></img><br />
                             {product.title}<br />
                             {product.price}
-                            <button>Details</button>
+                            <Link to={`/products/${product.id}`}><button>Details</button></Link>
                         </li>
                     ))}
                 </ul>

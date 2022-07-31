@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <nav>
             <ul>
-                <li>Shop</li>
+                <li>Products</li>
                 <li>Checkout</li>
                 <li>Cart</li>
             </ul>
