@@ -1,8 +1,10 @@
-import React, { useDebugValue } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import './productPage.module.css';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const ProductPage = () => {
     const [products, setProducts] = useState([]);
@@ -22,11 +24,12 @@ const ProductPage = () => {
         <div>
             {products.length > 0 && (
                 <ul>
+                    <h2>Products</h2>
                     {products.map(product => (
                         <li className="listProduct" key={product.id}>
                             <img src={product.image} alt={product.title}></img><br />
                             {product.title}<br />
-                            {product.price}
+                            {product.price}<br />
                             <Link to={`/products/${product.id}`}><button>Details</button></Link>
                         </li>
                     ))}

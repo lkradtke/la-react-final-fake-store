@@ -23,12 +23,12 @@ const ProductDetails = () => {
     console.log(item);
 
     return (
-        <div>
+        <div className="productDetails">
             <img src={item.image}></img>
             <h2>{item.title}</h2>
-            <h5>${item.price}</h5>
-            <h4>{item.category}</h4>
-            <h3>{item.description}</h3>
+            <p>${item.price}</p>
+            <p>{item.category}</p>
+            <p>{item.description}</p>
             <Link to="/products"><button>Return to Catalog</button></Link>
         </div>
     )

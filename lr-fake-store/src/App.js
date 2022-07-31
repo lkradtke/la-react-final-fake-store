@@ -5,6 +5,7 @@ import ProductDetails from './ProductDetails';
 import Cart from './Cart';
 import CheckoutPage from './CheckoutPage';
 import Header from './Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
