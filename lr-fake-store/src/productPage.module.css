@@ -1,0 +1,13 @@
+img {
+    height: 100px;
+    width: 100px;
+}
+
+li {
+    width: 200px;
+    padding: 3rem;
+}
+
+ul {
+    list-style: none;
+}
