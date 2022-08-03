@@ -10,4 +10,10 @@ li {
 
 ul {
     list-style: none;
+    color: black;
+    padding: 5px;
+    display: inline-flex;
+    flex-wrap: wrap;
+
 }
+

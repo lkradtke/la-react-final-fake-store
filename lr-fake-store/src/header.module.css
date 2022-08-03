@@ -1,8 +1,14 @@
 nav {
-    background-color: rgb(100, 0, 58);
+    background-color: rgb(210, 221, 243);
     color: white;
+
+
 }
 
-ul {
-    list-style: none;
+/* li {
+    color: white;
+} */
+
+li i {
+    padding: 5px;
 }
