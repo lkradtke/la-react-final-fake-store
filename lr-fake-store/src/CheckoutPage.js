@@ -1,7 +1,8 @@
-import React from 'react';
-import './checkoutPage.module.css';
-import {useState, useContext} from 'react';
-import CartContext from './CartContext';
+import React from "react";
+import "./checkoutPage.module.css";
+import {useState, useContext} from "react";
+import CartContext from "./CartContext";
+import CheckoutPageForm from "./CheckoutPageForm";
 
 const CheckoutPage = () => {
     const {items} = useContext(CartContext);
@@ -11,7 +12,15 @@ const CheckoutPage = () => {
     
     console.log('Items: ',items);
 
-    
+    const cartArray = () =>
+    items.map((item) => {
+        return item.price * item.quantity;
+    })
+
+    const cartProductTotal = 
+        cartArray().reduce((accumulator, value) => {
+            return accumulator + value;
+        }, 0);
 
     return (
         <div>
@@ -25,9 +34,9 @@ const CheckoutPage = () => {
                             <h6>Total: {item.itemTotal}</h6>
                             
                         </li>
-                        
-
                     ))}
+            <h5>Cart Total: ${cartProductTotal.toFixed(2)}</h5>
+            <CheckoutPageForm />
         </div>
     )
 };
