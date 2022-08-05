@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./productPage.module.css";
+import classes from "./productPage.module.css";
 import { Link } from "react-router-dom";
 import CartContext from "./CartContext";
 
@@ -21,16 +21,15 @@ const ProductPage = () => {
     }, []);
 
     return (
-        <div>
+        <div className="container">
                 {products.length > 0 && (
-                    <ul>
-                        <h2>Products</h2>
+                    <ul className="d-flex flex-wrap">
                         {products.map(product => (
-                            <li className="listProduct" key={product.id}>
+                            <li className="p-3 border shadow m-1" key={product.id}>
                                 <img src={product.image} alt={product.title}></img><br />
                                 {product.title}<br />
-                                {product.price}<br />
-                                <Link to={`/products/${product.id}`}><button>Details</button></Link>
+                                ${product.price}<br />
+                                <Link to={`/products/${product.id}`}><button style={{ margin: '1rem', borderRadius: '5px', border: 'none', backgroundColor: '#081640', color:'#eee'}}>Details</button></Link>
                             </li>
                         ))}
                     </ul>

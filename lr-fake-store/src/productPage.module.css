@@ -11,9 +11,11 @@ li {
 ul {
     list-style: none;
     color: black;
-    padding: 5px;
+    padding: 6rem;
     display: inline-flex;
     flex-wrap: wrap;
+    justify-content: center;
+
 
 }
 
