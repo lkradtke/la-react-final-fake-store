@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./header.module.css";
+import classes from "./header.module.css";
 import ProductDetails from "./ProductDetails";
 import Cart from "./Cart";
 import CheckoutPage from "./CheckoutPage";
@@ -10,13 +10,13 @@ const Header = () => {
     const {items} = useContext(CartContext);
 
     return (
-        <nav>
-            <ul className="headerStyle" style={{display: 'flex', justifyContent: 'space-around', textDecoration: 'none'}}>
-                <Link to="/products"><li>Products</li></Link>
-                <Link to="/cart"><li>Cart ({items.length})</li></Link>
-                <Link to="/checkout"><li><i class="fa-solid fa-cart-shopping"></i>Checkout</li></Link>
+        <header className={classes.header}>
+            <ul>
+                <Link style={{ textDecoration: 'none', color: '#081640'}} to="/products"><li>Products</li></Link>
+                <Link style={{ textDecoration: 'none', color: '#081640'}} to="/cart"><li><i class="fa-solid fa-cart-shopping"></i>Cart ({items.length})</li></Link>
+                <Link style={{ textDecoration: 'none', color: '#081640'}} to="/checkout"><li>Checkout</li></Link>
             </ul>
-        </nav>
+        </header>
     )    
 }
 

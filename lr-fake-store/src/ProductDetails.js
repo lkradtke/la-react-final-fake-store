@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route, useParams, Link } from "react-router-dom";
 import CartContext from "./CartContext";
-import "./productDetails.module.css";
+import classes from "./productDetails.module.css";
 
 const ProductDetails = () => {
 
@@ -26,7 +26,7 @@ const ProductDetails = () => {
     console.log(item);
 
     return (
-        <div className="container">
+        <div className={classes.product}>
             <img src={item.image}></img>
             <h2>{item.title}</h2>
             <p>${item.price}</p>
@@ -35,12 +35,12 @@ const ProductDetails = () => {
             <form>
                 <input type="number" placeholder="0" min="0" max="5" id="numInput"></input>
             </form>
-            <button onClick={() => {
+            <button style={{ margin: '3rem', borderRadius: '5px', border: 'none', backgroundColor: '#081640', color:'#eee'}} onClick={() => {
                 const numInput = parseInt(document.getElementById("numInput").value)
                 addToCart(item.description, item.id, item.image, item.price, item.title, item.quantity = numInput);
             }}>
                 Add To Cart</button><br />
-            <Link to="/products"><button>Return to Products</button></Link>
+            <Link to="/products"><button style={{ borderRadius: '5px', border: 'none', backgroundColor: '#081640', color:'#eee'}}>Return to Products</button></Link>
         </div>
     )
 };
